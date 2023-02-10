@@ -58,4 +58,17 @@ public class JobTest {
         assertNotEquals(test_job3, test_job4);
     }
 
+//    ID:  _______
+//    Name: _______
+//    Employer: _______
+//    Location: _______
+//    Position Type: _______
+//    Core Competency: _______
+
+//    @Test
+//    public void testToStringStartsAndEndsWithNewLine() {
+//        Job test_job1 =
+//
+//    }
+
 }
