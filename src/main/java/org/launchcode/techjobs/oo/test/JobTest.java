@@ -65,10 +65,39 @@ public class JobTest {
 //    Position Type: _______
 //    Core Competency: _______
 
-//    @Test
-//    public void testToStringStartsAndEndsWithNewLine() {
-//        Job test_job1 =
-//
-//    }
+    // When passed a Job object, it should return a string that contains a blank line before and after the job information.
+    @Test
+    public void testToStringStartsAndEndsWithNewLine() {
+        Job test_job3 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        //test that the first character of the string returned by the toString method is a newline character.
+
+        assertEquals('\n',test_job3.toString().charAt(0));
+
+        // test that the last character of the string returned by the toString method is a newline character.
+
+        assertEquals('\n', test_job3.toString().charAt(test_job3.toString().length() - 1));
+
+    }
+
+    //The string should contain a label for each field, followed by the data stored in that field. Each field should be on its own line.
+    @Test
+    public void testToStringContainsCorrectLabelsAndData() {
+        Job test_job3 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+       //To verify that the string returned by `toString` is as expected
+        assertEquals("\nID: " + test_job3.getId() + "\nName: Product tester\nEmployer: ACME\nLocation: Desert\nPosition Type: Quality control\nCore Competency: Persistence\n" , test_job3.toString());
+    }
+
+
+   //If a field is empty, the method should add, “Data not available” after the label.
+
+    @Test
+    public void testToStringHandlesEmptyField() {
+        Job test_job3 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        assertEquals("\nID: " + test_job3.getId() + "\nName: Product tester\nEmployer: Data not available\nLocation: Desert\nPosition Type: Quality control\nCore Competency: Data not available\n" , test_job3.toString());
+
+    }
+
 
 }
+
+
