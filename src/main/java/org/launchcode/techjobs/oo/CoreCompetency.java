@@ -38,7 +38,11 @@ public class CoreCompetency {
         return Objects.hash(id);
     }
 
+    //If a field is empty, the method should add, “Data not available” after the label.
     public String getValue() {
+        if(value.isEmpty() && value==null){
+            return "Data not available";
+        }
         return value;
     }
 
