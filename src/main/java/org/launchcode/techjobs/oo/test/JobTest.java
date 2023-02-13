@@ -72,10 +72,12 @@ public class JobTest {
         //test that the first character of the string returned by the toString method is a newline character.
 
         assertEquals('\n',test_job3.toString().charAt(0));
+        //System.out.println(test_job3.toString());
+
 
         // test that the last character of the string returned by the toString method is a newline character.
 
-        assertEquals('\n', test_job3.toString().charAt(test_job3.toString().length() - 1));
+       assertEquals('\n', test_job3.toString().charAt(test_job3.toString().length() - 1));
 
     }
 
@@ -91,8 +93,13 @@ public class JobTest {
 
     @Test
     public void testToStringHandlesEmptyField() {
-        Job test_job3 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
-        assertEquals("\nID: " + test_job3.getId() + "\nName: Product tester\nEmployer: ACME\nLocation: Desert\nPosition Type: Quality control\nCore Competency: Persistence\n", test_job3.toString());
+        Job testJob5 = new Job("Product tester", new Employer(""), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency(""));
+        assertEquals("\nID: " + testJob5.getId() + "\nName: Product tester\nEmployer: Data not available\nLocation: Desert\nPosition Type: Quality control\nCore Competency: Data not available\n" , testJob5.toString());
+
+//        System.out.println(testJob5.getEmployer().getValue());
+//        System.out.println(testJob5.getLocation().getValue());
+//        System.out.println(testJob5.getCoreCompetency().getValue());
+//        System.out.println(testJob5.toString());
     }
 
 

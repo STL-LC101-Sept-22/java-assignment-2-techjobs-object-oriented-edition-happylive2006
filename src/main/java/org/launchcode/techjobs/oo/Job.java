@@ -81,6 +81,9 @@ public class Job {
     }
 
     public String getName() {
+        if(name == null || name.isEmpty()) {
+            return "Data not available";
+        }
         return name;
     }
 
