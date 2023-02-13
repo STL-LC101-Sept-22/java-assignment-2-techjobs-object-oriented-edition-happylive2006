@@ -93,13 +93,16 @@ public class JobTest {
 
     @Test
     public void testToStringHandlesEmptyField() {
-        Job testJob5 = new Job("Product tester", new Employer(""), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency(""));
-        assertEquals("\nID: " + testJob5.getId() + "\nName: Product tester\nEmployer: Data not available\nLocation: Desert\nPosition Type: Quality control\nCore Competency: Data not available\n" , testJob5.toString());
+        Job test_job3 = new Job("Product tester", new Employer(""), new Location(""), new PositionType(""), new CoreCompetency(""));
+      assertEquals("\nID: " + test_job3.getId() + "\nName: Product tester\nEmployer: Data not available\nLocation: Data not available\nPosition Type: Data not available\nCore Competency: Data not available\n" , test_job3.toString()) ;
 
-//        System.out.println(testJob5.getEmployer().getValue());
-//        System.out.println(testJob5.getLocation().getValue());
-//        System.out.println(testJob5.getCoreCompetency().getValue());
-//        System.out.println(testJob5.toString());
+//        System.out.println(test_job3.getEmployer().getValue());
+//        System.out.println(test_job3.getLocation().getValue());
+//        System.out.println(test_job3.getPositionType().getValue());
+//        System.out.println(test_job3.getCoreCompetency().getValue());
+//        System.out.println(test_job3.toString());
+//        System.out.println(test_job3.getName());
+
     }
 
 
