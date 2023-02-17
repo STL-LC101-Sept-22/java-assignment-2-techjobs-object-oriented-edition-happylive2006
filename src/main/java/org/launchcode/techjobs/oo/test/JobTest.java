@@ -87,6 +87,7 @@ public class JobTest {
     public void testToStringContainsCorrectLabelsAndData() {
         Job test_job3 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
        //To verify that the string returned by `toString` is as expected
+        //System.out.println(test_job3.toString());
         assertEquals("\nID: " + test_job3.getId() + "\nName: Product tester\nEmployer: ACME\nLocation: Desert\nPosition Type: Quality control\nCore Competency: Persistence\n" , test_job3.toString());
     }
 
@@ -94,8 +95,8 @@ public class JobTest {
 
     @Test
     public void testToStringHandlesEmptyField() {
-        Job test_job3 = new Job("Product tester", new Employer(""), new Location(""), new PositionType(""), new CoreCompetency(""));
-      assertEquals("\nID: " + test_job3.getId() + "\nName: Product tester\nEmployer: Data not available\nLocation: Data not available\nPosition Type: Data not available\nCore Competency: Data not available\n" , test_job3.toString()) ;
+        Job test_job3 = new Job("", new Employer(""), new Location(""), new PositionType(""), new CoreCompetency(""));
+      assertEquals("\nID: " + test_job3.getId() + "\nName: Data not available\nEmployer: Data not available\nLocation: Data not available\nPosition Type: Data not available\nCore Competency: Data not available\n" , test_job3.toString()) ;
 
 //        System.out.println(test_job3.getEmployer().getValue());
 //        System.out.println(test_job3.getLocation().getValue());
